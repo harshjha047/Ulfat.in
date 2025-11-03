@@ -8,7 +8,7 @@ function ProductCard({ data }) {
   const exist = getProfileData?.wishlist?.find((e) => e == data?._id);
 
   return (
-    <div className="h-[49vh]  relative border w-[18vw] rounded-md border-[#f7f7f7] flex flex-col items-center group mx-auto">
+    <div className="h-[49vh]  relative border  sm:w-[18vw] my-4  w-[48vw] rounded-md border-[#f7f7f7] flex flex-col items-center group mx-auto">
       {exist ? (
         <button
           onClick={() => {

@@ -5,9 +5,13 @@ import MayAlsoLike from '../Components/Home/MayAlsoLike'
 
 function Home() {
   return (<>
-  <Hero/>
-  <Shop/>
-  <MayAlsoLike/>
+
+  <div className=""><Hero/></div>
+  <div className=""><Shop/></div>
+  <div className=""><MayAlsoLike/></div>
+  
+  
+  
   </>
   )
 }

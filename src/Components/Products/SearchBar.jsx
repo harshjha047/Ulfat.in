@@ -25,9 +25,9 @@ function SearchBar() {
   },[search])
   useEffect(()=>setFilteredData(productData),[])
   return (
-    <div className='flex justify-center items-center'>
-        <form action="" className=' border-black gap-1 p-[2px] flex justify-evenly rounded-full bg-[white]'>
-            <input type="text" name='search' value={search} onChange={handleChange} className=' border text-sm p-[6px] px-3 rounded-full outline-none' placeholder='Search'/>
+    <div className='flex justify-center items-center w-full'>
+        <form action="" className=' border-black gap-1 w-full p-[2px] flex justify-evenly rounded-full bg-[white]'>
+            <input type="text" name='search' value={search} onChange={handleChange} className=' border text-sm p-[6px] px-3 rounded-full outline-none flex-1' placeholder='Search'/>
             <button type='submit' className=' border p-1 px-2 rounded-full  bg-white text-base'><IoSearch/></button>
         </form>
     </div>

@@ -23,9 +23,8 @@ function MainNavigationBar() {
           <Link to={"/product"} className="text-sm font-medium text-gray-800 bg-white py-2 px-3 rounded-full">Products</Link>
         </div>
         <div className="flex gap-3 items-center">
-          {<SearchBar/>}
-          <Link to={getProfileData?"/cart":"/login"} className=" border text-xl p-2 border-[#f1f1f1] rounded-full bg-white">
-          {getProfileData?<PiHandbagSimpleLight  />:<LuLogIn/>}</Link></div>
+          {/* {<SearchBar/>} */}
+          <Link to={getProfileData?"/cart":"/login"} className=" border text-xl p-2 border-[#f1f1f1] rounded-full bg-white">{getProfileData?<PiHandbagSimpleLight  />:<LuLogIn/>}</Link></div>
       </div>
     </div>
   );

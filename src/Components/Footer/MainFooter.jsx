@@ -12,14 +12,15 @@ function MainFooter() {
     <footer className="h-[100vh] w-full relative flex justify-center items-center flex-col">
       <div className="h-[50vh] flex items-end  w-full ">
         {/* <div className="h-[5vh]  w-full bg-gradient-to-t from-[#111] to-[#00000000]"></div> */}
+
       </div>
-      <div className=" absolute w-[45vw] h-[40vh]  z-20">
-        <img src={logo} className="h-full m-auto " alt="" />
-        <div className="bg-[#A88455] h-[7vh] w-[7vh] rounded-full absolute top-0 right-0"></div>
+      <div className=" absolute w-[100%] flex justify-center items-center h-[40vh]  border-black z-20">
+        <div className="sego text-[#A88455] text-[10rem] sm:text-[14rem]">Ulfat</div>
+        {/* <div className="bg-[#A88455] h-[7vh] w-[7vh] rounded-full absolute top-0 right-0"></div> */}
       </div>
       <div className="h-[50vh] w-full bg-[#111] relative z-10 flex justify-center items-center">
         <div className="  absolute bottom-5 z-50 w-[90vw]  ">
-          <div className="w-full flex justify-center items-center text-white text-4xl">
+          <div className="w-full flex justify-center items-center text-white text-2xl  sm:text-4xl">
             BY BANIYA BHAIYALOG
           </div>
           <div className="h-[20vh] border-t flex flex-col">

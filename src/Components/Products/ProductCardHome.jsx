@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function ProductCardHome({data}) {
 
   return (
-    <Link to={`/product/item/${data?._id}`} className="h-[49vh]  w-[18vw] rounded-md border-[#f7f7f7] flex flex-col items-center group mx-auto ">
-      <div className="h-[40vh] rounded-2xl w-full  border-black overflow-hidden">
+    <Link to={`/product/item/${data?._id}`} className=" sm:w-[18vw]  w-[48vw] rounded-md border-[#f7f7f7] flex flex-col items-center group mx-auto ">
+      <div className="sm:h-[40vh] h-[25vh] rounded-2xl w-full  border-black overflow-hidden">
         <img src={data?.images[0]?.url} className="w-full h-full object-cover object-center" alt="" />
       </div>
       <div className="p-2 w-full">
