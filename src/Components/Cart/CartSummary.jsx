@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
+import { CiDeliveryTruck } from "react-icons/ci";
 import { useCart } from '../../Context/CartContext';
 
 function CartSummary() {
       let {cartData, totalPrice } = useCart();
-  console.log(cartData);
+  const navigate=useNavigate()
   
 
       
@@ -11,7 +13,7 @@ function CartSummary() {
          {/* <!-- Order Summary --> */}
       
         <div className="bg-gray-100 rounded-lg p-6 sticky top-[14vh] ">
-          <h3 className="text-xl font-bold text-[black] mb-6">Order Summary</h3>
+          <h3 className="text-xl font-bold text-[black] mb-6 flex gap-2">Order Summary <span className='text-3xl'><CiDeliveryTruck/></span></h3>
           
           <div className="space-y-3 mb-6">
             <div className="flex justify-between text-gray-700">
@@ -33,6 +35,7 @@ function CartSummary() {
             </div>
           </div>
     <button
+    onClick={()=>{navigate("/order")}}
       className="w-full bg-blue-600 text-[#ffffff] py-3 rounded-lg font-semibold hover:bg-blue-700 mb-4"
     >
       Proceed to Checkout

@@ -13,7 +13,7 @@ function ProductDetailsTabs() {
       <div className="border-b border-gray-700">
         <nav className="-mb-px flex space-x-8">
           <button onClick={()=>{setTog(true)}}  className={`py-2 px-1 border-b-2 ${tog?"border-blue-500 text-blue-500 font-medium":"border-transparent text-gray-700"} `}>Description</button>
-          <button onClick={()=>{setTog(false)}} className={`py-2 px-1 border-b-2 ${tog?"border-transparent text-gray-700":"border-blue-500 text-blue-500 font-medium"}`}>Reviews</button>
+          {/* <button onClick={()=>{setTog(false)}} className={`py-2 px-1 border-b-2 ${tog?"border-transparent text-gray-700":"border-blue-500 text-blue-500 font-medium"}`}>Reviews</button> */}
         </nav>
       </div>
       {tog?<div className="py-8">

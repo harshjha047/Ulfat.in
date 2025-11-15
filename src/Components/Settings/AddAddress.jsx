@@ -33,6 +33,7 @@ function AddAddress() {
       const { data: res } = await api.post("/users/address", createAddress);
       toast.success("Address Registered Successfully")
       await fetchProfileData()
+      setAddField(false)
       naviagte("")
     } catch (err) {
       console.log(err);
@@ -68,7 +69,7 @@ function AddAddress() {
             {/* <span className={`px-2 py-1  bg-green-600 text-white rounded text-xs`}>Default</span> */}
           </div>
           <div className="flex space-x-2">
-            <button type="submit" className="text-blue-400 hover:text-blue-300 text-sm" onClick={()=>{setAddField(false)}}>
+            <button type="submit" className="text-blue-400 hover:text-blue-300 text-sm" >
               Add
             </button>
           </div>

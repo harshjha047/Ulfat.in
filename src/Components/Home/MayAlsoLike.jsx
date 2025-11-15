@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
 import ProductCardHome from '../Products/ProductCardHome'
 import { useProduct } from '../../Context/ProductContext'
 
 function MayAlsoLike() {
-  const {productData,FetchProductsData}=useProduct()
+  const {productData}=useProduct()
 
   return (
     <div className=' w-full border-black flex justify-between items-center flex-col'>

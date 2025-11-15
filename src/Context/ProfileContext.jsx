@@ -30,7 +30,7 @@ export const ProfileApi = ({ children }) => {
     try {
       const data = await authService.getProfile();
       setGetProfileData(data?.user);
-      await fetchWishlistData();
+      setLoading(true)
     } catch (err) {
       console.log(err);
     } finally {
@@ -41,17 +41,13 @@ export const ProfileApi = ({ children }) => {
   const EditProfileData = async (info) => {
     try {
       const data = await authService.editProfile(info);
-      fetchProfileData();
+      await fetchProfileData();
     } catch (err) {
       console.log(err);
     } finally {
       setLoading(false);
     }
   };
-  //   const EditProfileData = async (formData) => {
-
-  //   return res.data;
-  // };
 
   const addWishlistData = async (info) => {
     try {

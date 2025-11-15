@@ -35,13 +35,14 @@ function ProductCard({ data }) {
       <div className="h-[40vh] rounded-2xl w-full  overflow-hidden border-black">
         <img src={data?.images[0]?.url} className="w-full h-full object-cover object-center" alt="" />
       </div>
-      <Link to={`/product/item/${data._id}`} className="p-2 w-full">
+      <Link to={`/product/item/${data._id}`} className="p-2 w-full ">
         <div className="text-lg font-semibold">{data?.name}</div>
         <div className="text-sm text-gray-900 flex justify-between">
           <div className="">{data?.category}</div>
           <div className="">{data?.new_price}</div>
         </div>
       </Link>
+      <Link to={`/product/item/${data._id}`} className=" absolute bottom-0 w-full h-[80%]"></Link>
     </div>
   );
 }

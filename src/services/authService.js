@@ -1,5 +1,5 @@
 // src/services/authService.js
-import api, { setAccessToken, clearAccessToken } from "./api";
+import api from "./api";
 
 const authService = {
   register: async (payload) => {
@@ -11,18 +11,31 @@ const authService = {
 
   login: async (credentials) => {
     const { data } = await api.post("/users/login", credentials);
-    if (data.accessToken) setAccessToken(data.accessToken);
     return data;
+  },
+
+  requestreset: async (credentials) => {
+    const responce = await api.post(
+        "/users/request-reset",
+        credentials,{ withCredentials: true }
+      );
+    return responce;
+  },
+    resetpassword: async (credentials) => {
+   const responce = await api.patch("/users/reset-password",credentials,{ withCredentials: true });
+    return responce;
   },
 
   //profile
 
   logout: async () => {
-    try {
-      await api.post("/users/logout");
-    } finally {
-      clearAccessToken();
+    try{await api.post("/users/logout")}
+    catch(err){}
+    finally{
+      localStorage.removeItem("token")
+      window.location.href = "/"
     }
+      
   },
 
   getProfile: async () => {

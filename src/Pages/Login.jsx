@@ -5,10 +5,14 @@ import { useFormik } from "formik";
 import { LoginSchema } from "../Components/Reusable/AuthSchema";
 import toast from "react-hot-toast";
 import { useAuth } from "../Context/AuthContext";
+import { useHome } from "../Context/HomeContext";
 
 function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
+    const {see,setSee}=useHome()
+  
+  
 
   const onSubmit = async (values, actions) => {
     try {
@@ -70,12 +74,12 @@ function Login() {
             value={values.password}
             onChange={handleChange}
             err={errors.password}
-            type={"password"}
+            type={see?"text":"password"}
             placeholder={"Enter your password here"}
             onBlur={handleBlur}
           />
-          <div className="flex justify-end w-full text-sm text-cyan-700 my-1">
-            <Link>Forget Password?</Link>
+          <div className="flex justify-end w-full  my-1">
+            <Link to={"/auth/account/forgetpassword"} className="text-sm text-cyan-700">Forget Password?</Link>
           </div>
           <button
             type="submit"
@@ -85,7 +89,7 @@ function Login() {
           </button>
           <div className="flex justify-center w-full text-sm my-1 mb-8">
             Don't have any account ?
-            <Link className="text-cyan-700">register</Link>
+            <Link to={"/register"} className="text-cyan-700">register</Link>
           </div>
         </form>
       </div>

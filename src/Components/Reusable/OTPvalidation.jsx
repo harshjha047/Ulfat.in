@@ -88,7 +88,7 @@ function OTPvalidation() {
         </form>
         <p className="text-xs mt-4">
           Didn't receive code ?{" "}
-          <span className="text-[#4675F4]" onClick={resendOTP}>Resend OTP</span>
+          <span className="text-[#4675F4] cursor-pointer" onClick={resendOTP}>Resend OTP</span>
         </p>
       </article>
     </section>

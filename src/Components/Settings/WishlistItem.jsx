@@ -20,9 +20,11 @@ function WishlistItem({wishId}) {
                   >
                     <GoHeartFill />
                   </button>
-      <div className="h-[40vh] rounded-2xl w-full border border-black"></div>
+      <div className="h-[40vh] rounded-2xl w-full border border-black overflow-hidden">
+        <img src={data?.images[0]?.url} className="h-full w-full object-cover object-center" alt="" />
+      </div>
       <Link 
-      to={`/product/item/${data._id}`}
+      to={`/product/item/${data?._id}`}
       className="p-2 w-full">
         <div className="text-lg font-semibold">{data?.name}</div>
         <div className="text-sm text-gray-900 flex justify-between">

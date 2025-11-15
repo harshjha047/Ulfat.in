@@ -36,8 +36,6 @@ useEffect(() => {
   }
 }, [product]);
 
-console.log(cartItem);
-
 
 const handleChange = (e) => {
   const { name, value } = e.target;
@@ -81,11 +79,11 @@ const average = product?.reviews?.length > 0? product?.reviews?.reduce((sum, num
         <div className="mb-6">
           <span className="text-3xl font-bold text-[#181818]">₹ {product?.new_price}</span>
           <span className="text-lg text-gray-400 line-through ml-2">₹{product?.old_price}</span>
-          <span className="bg-red-600 text-[#181818] px-2 py-1 rounded-full text-sm ml-2">{Math.round(-(((product?.new_price/product?.old_price)*100)-100))}% OFF</span>
+          <span className="bg-green-600 text-[#ffffff] px-2 py-1 rounded-full text-sm ml-2">{Math.round(-(((product?.new_price/product?.old_price)*100)-100))}% OFF</span>
         </div>
 
         {/* <!-- Rating --> */}
-        <div className="flex items-center mb-6">
+        {/* <div className="flex items-center mb-6">
           <div className="flex ">
             <svg className={`w-5 h-5 fill-current ${average>=1?"text-yellow-400":""}`} viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
             <svg className={`w-5 h-5 fill-current ${average>=2?"text-yellow-400":""}`} viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
@@ -94,7 +92,7 @@ const average = product?.reviews?.length > 0? product?.reviews?.reduce((sum, num
             <svg className={`w-5 h-5 fill-current ${average==5?"text-yellow-400":""}`} viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
           </div>
           <span className="text-gray-400 ml-2">{average} ({product?.reviews?.length} reviews)</span>
-        </div>
+        </div> */}
 
         {/* <!-- Description --> */}
         <div className="mb-6">
@@ -133,7 +131,6 @@ const average = product?.reviews?.length > 0? product?.reviews?.reduce((sum, num
             <span className="px-6 py-2 text-[#ffffff]">{units?units?.quantity:"0"}</span>
             <button className="px-4 py-2 text-[#f0f0f0] hover:bg-gray-700 rounded-r-lg" onClick={()=>{
               AddToCart(cartItem) 
-              console.log(cartItem)
             }}>+</button>
           </div>
         </div>
@@ -148,34 +145,7 @@ const average = product?.reviews?.length > 0? product?.reviews?.reduce((sum, num
           </button>
         </div>
 
-        {/* <!-- Product Features --> */}
-        {/* <div className="mt-8 grid grid-cols-2 gap-4">
-          <div className="flex items-center text-gray-700">
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <span className="text-sm">Authentic Product</span>
-          </div>
-          <div className="flex items-center text-gray-700">
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-            </svg>
-            <span className="text-sm">Free Shipping</span>
-          </div>
-          <div className="flex items-center text-gray-700">
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"/>
-            </svg>
-            <span className="text-sm">Easy Returns</span>
-          </div>
-          <div className="flex items-center text-gray-700">
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-            </svg>
-            <span className="text-sm">24/7 Support</span>
-          </div>
-        </div> */}
+       
 
       </div>
     </div>

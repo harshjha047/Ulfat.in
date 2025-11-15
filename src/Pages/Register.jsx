@@ -5,10 +5,15 @@ import { useAuth } from "../Context/AuthContext";
 import { RegisterSchema } from "../Components/Reusable/AuthSchema";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
+import { useHome } from "../Context/HomeContext";
 
 function Register() {
   let naviagte = useNavigate();
   const { genrateOtp, setGeneratedOtp, setPreRegisterUserData } = useAuth();
+      const {see,setSee}=useHome()
+
+
+  
 
   const onSubmit = async (values, actions) => {
     actions.resetForm();
@@ -71,7 +76,7 @@ function Register() {
             }
             value={values.email}
             onChange={handleChange}
-            type={"text"}
+            type={"email"}
             placeholder={"Enter your email here"}
             err={errors.email}
             onBlur={handleBlur}
@@ -82,7 +87,7 @@ function Register() {
             id={"password"}
             value={values.password}
             onChange={handleChange}
-            type={"password"}
+            type={see ? "text" : "password"}
             placeholder={"Create a strong password"}
             err={errors.password}
             onBlur={handleBlur}
@@ -95,7 +100,7 @@ function Register() {
           <InputFields
             label={"Conform Password"}
             id={"confirmPassword"}
-            type={"password"}
+            type={see ? "text" : "password"}
             placeholder={"Conform your password"}
             err={errors.confirmPassword}
             onBlur={handleBlur}
@@ -116,7 +121,9 @@ function Register() {
           </button>
           <div className="flex justify-center w-full text-sm my-1 ">
             Already have a account ?{" "}
-            <Link className="text-cyan-700">go to login</Link>
+            <Link to={"/login"} className="text-cyan-700">
+              go to login
+            </Link>
           </div>
         </form>
       </div>
