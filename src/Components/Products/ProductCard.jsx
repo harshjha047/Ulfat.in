@@ -32,8 +32,8 @@ function ProductCard({ data }) {
           <GoHeart />
         </button>
       )}
-      <div className="h-[40vh] rounded-2xl w-full  overflow-hidden border-black">
-        <img src={data?.images[0]?.url} className="w-full h-full object-cover object-center" alt="" />
+      <div className="h-[40vh]  w-full  overflow-hidden border-black">
+        <img src={data?.images[0]?.url} className=" rounded-2xl h-full object-cover object-top" alt="" />
       </div>
       <Link to={`/product/item/${data._id}`} className="p-2 w-full ">
         <div className="text-lg font-semibold">{data?.name}</div>

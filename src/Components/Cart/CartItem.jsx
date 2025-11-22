@@ -17,7 +17,7 @@ function CartItrm({data}) {
         <img
           src={imgData?.images?.[0]?.url}
           alt={imgData?.images?.[0]?.alt || e?.productName}
-          className="w-full md:w-32 h-32 object-cover rounded-lg"
+          className="w-full md:w-32  object-cover rounded-lg"
         />
         <div className="flex-1">
           <h3 className="text-xl font-bold  mb-2">{e?.productName}</h3>

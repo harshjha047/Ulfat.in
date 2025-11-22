@@ -19,11 +19,14 @@ function Menu() {
 
   return (
     <div
-      className={`h-[100vh]  fixed ${
+     onClick={() => {
+              setMenu(false);
+            }}
+      className={`h-[100vh] w-full fixed ${
         menu ? "left-0" : "left-[-100%]"
       } z-50 bottom-0  p-5 `}
     >
-      <div className="  flex flex-wrap items-start gap-2 customScrollerMini h-full flex-col justify-center  ">
+      <div className="  flex flex-wrap items-start gap-2   customScrollerMini h-full flex-col justify-center  ">
         <MenuButton path={"/"} name={"Home"} icon={<RiHome5Line />} />
         <MenuButton path={"/product"} name={"Products"} icon={<VscTag />} />
         {getProfileData && (

@@ -17,11 +17,14 @@ function Login() {
   const onSubmit = async (values, actions) => {
     try {
       actions.resetForm();
-      login(values);
+      await login(values);
       toast.success("User Logind Successfully");
+
       navigate("/");
     } catch (err) {
       console.log(err);
+      toast.error("User Login Failed");
+
     }
   };
   const {

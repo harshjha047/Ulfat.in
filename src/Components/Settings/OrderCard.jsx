@@ -6,7 +6,7 @@ function OrderCard({data}) {
     const imagez= productData?.find((e)=> e?._id==data?.items[0]?.productId)
     
   return (
-    <div className="border border-gray-700 rounded-lg p-4">
+    <div className="border border-[#c5c5c5] shadow-md hover:shadow-sm rounded-lg p-4">
             <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-3">
               <div>
                 <p className="text-sm text-gray-400">Order #{data?.paymentInfo?.transactionId}</p>

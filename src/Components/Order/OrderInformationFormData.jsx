@@ -62,7 +62,7 @@ function OrderInformationFormData() {
             <input
               type="text"
               id="fullname"
-              className="w-[50vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
+              className="mb:w-[50vw] w-[90vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
               placeholder="Full name"
               name="name"
               value={name}
@@ -77,7 +77,7 @@ function OrderInformationFormData() {
               type="email"
               name="email"
               id="email"
-              className="w-[50vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
+              className="mb:w-[50vw] w-[90vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
               value={email}
               onChange={handleChange}
               placeholder="Email"
@@ -91,7 +91,7 @@ function OrderInformationFormData() {
               type="text"
               name="phone"
               id="phone"
-              className="w-[50vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
+              className="mb:w-[50vw] w-[90vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
               value={phone}
               onChange={handleChange}
               placeholder="Phone Number"
@@ -104,14 +104,14 @@ function OrderInformationFormData() {
             <input
               type="text"
               id="address"
-              className="w-[50vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
+              className="mb:w-[50vw] w-[90vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
               placeholder="Street Address"
               name="street"
               value={street}
               onChange={handleChange}
             />
           </div>
-          <div className="flex gap-2 w-[50vw] justify-between flex-wrap">
+          <div className="flex gap-2 mb:w-[50vw] w-[90vw] justify-between flex-wrap">
             <div className="flex flex-col">
               <label htmlFor="city" className="text-[#979797] font-medium">
                 City
@@ -160,7 +160,7 @@ function OrderInformationFormData() {
         {/* <div className="flex gap-3 flex-col border p-2 my-3 rounded-md">
           <div className="text-xl font-medium">Payment Method</div>
           <label
-            className="border w-[50vw] flex p-3 gap-2 rounded-md"
+            className="border mb:w-[50vw] w-[90vw] flex p-3 gap-2 rounded-md"
             htmlFor="card"
           >
             <input
@@ -173,7 +173,7 @@ function OrderInformationFormData() {
             <div className="text-[#7a7a7a] font-medium"> Dabit/Cradit Card</div>
           </label>
           <label
-            className="border w-[50vw] flex p-3 gap-2 rounded-md"
+            className="border mb:w-[50vw] w-[90vw] flex p-3 gap-2 rounded-md"
             htmlFor="upi"
           >
             <input
@@ -186,7 +186,7 @@ function OrderInformationFormData() {
             <div className="text-[#7a7a7a] font-medium"> UPI</div>
           </label>
           <label
-            className="border w-[50vw] flex p-3 gap-2 rounded-md"
+            className="border mb:w-[50vw] w-[90vw] flex p-3 gap-2 rounded-md"
             htmlFor="cod"
           >
             <input

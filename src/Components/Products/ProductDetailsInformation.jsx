@@ -13,6 +13,8 @@ function ProductDetailsInformation() {
   const { getProfileData } = useProfile();
   const {cartData, setCartData, RemoveFromCart, AddToCart}=useCart()
 
+  console.log(product);
+  
 
 const [cartItem, setCartItem] = useState({
   productId: "",
@@ -29,7 +31,7 @@ useEffect(() => {
       productId: ProductId,
       productName: product.name,
       priceAtAddTime: product.new_price,
-      size: "XXS",
+      size: "",
       quantity: 1,
       subtotal: product.new_price,
     });
@@ -109,19 +111,15 @@ const average = product?.reviews?.length > 0? product?.reviews?.reduce((sum, num
         </div>
 
         {/* <!-- Size Selection --> */}
-        <div className="mb-6">
+        {product?.size != 0 && <div className="mb-6">
           <h3 className="text-lg font-semibold text-[#181818] mb-3">Size</h3>
           <div className="">
-            <select onChange={handleChange} className='border p-2' name="size" id="">
-              <option value="XXS">XXS</option>
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-              <option value="XXL">XXL</option>
+            <select onChange={handleChange} className='border p-2 uppercase' name="size" id="">
+              {product?.size?.map((e,i)=><option key={i} value={e?.Size}>{e?.Size}</option>)}
             </select>
           </div>
-        </div>
+        </div>}
+        
 
         {/* <!-- Quantity --> */}
         <div className="mb-8">

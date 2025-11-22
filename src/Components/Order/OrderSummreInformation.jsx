@@ -8,7 +8,7 @@ import OrderSummary from './OrderSummary'
       return (
         <section className='flex flex-col items-center  gap-4'>
           <div className="h-[12vh]"></div>
-          <section className='flex justify-center gap-4'>
+          <section className='mb:flex justify-center gap-4'>
             <article>
               <OrderSummary/>
             </article>

@@ -7,9 +7,9 @@ function Settings() {
   return (
     <div className='h-screen w-full '>
         <div className="h-[12vh] w-full "></div>
-        <div className="flex justify-evenly h-[88vh] w-full items-center">
-          <div className="h-full flex-[1]"><SideBar/></div>
-          <div className="h-full flex-[3] "><Outlet/></div>
+        <div className="flex justify-evenly h-[88vh]  w-full items-center">
+          <div className="h-full sm:flex-[1] "><SideBar/></div>
+          <div className="sm:h-full flex-[3] "><Outlet/></div>
             
         </div>
 

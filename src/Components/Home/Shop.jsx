@@ -11,7 +11,7 @@ function Shop() {
 
   return (
     <div className=" border-black w-full ">
-      <div className="w-[90%] flex justify-between items-center  text-xl font-semibold sego p-4 py-6">
+      <div className="w-[90%] flex justify-between items-center  text-xl font-semibold p-4 py-6">
         Special features
       </div>
       <div className="lg:flex w-full">
