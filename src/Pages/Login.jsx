@@ -46,7 +46,7 @@ function Login() {
 
   return (
     <div className="flex flex-col h-screen justify-center items-center">
-      <div className=" w-[25%] rounded-xl shadow-2xl border border-[#fafafa]">
+      <div className=" md:w-[25%] w-[90%] rounded-xl shadow-2xl border border-[#fafafa]">
         <form
           action=""
           onSubmit={handleSubmit}
