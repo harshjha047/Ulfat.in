@@ -8,7 +8,7 @@ import ReactGA from "react-ga4";
 
 function App() {
   useEffect(() => {
-    ReactGA.initialize("G-E2KPCSKD5V");
+    ReactGA.initialize("G-WGPVJTCW02");
     ReactGA.send({
       hitType: "pageview",
       page: window.location.path,
