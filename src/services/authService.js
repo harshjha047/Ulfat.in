@@ -6,12 +6,16 @@ const authService = {
     const { data } = await api.post("/users/register", payload, {
       withCredentials: true,
     });
-    return data;
+    localStorage.setItem('token', data?.token);
+    
+    return data?.user;
   },
 
   login: async (credentials) => {
     const { data } = await api.post("/users/login", credentials);
-    return data;
+    console.log(data);
+    localStorage.setItem('token', data?.token);
+    return data?.user;
   },
 
   requestreset: async (credentials) => {
