@@ -8,8 +8,8 @@ function ProductCard({ data }) {
   const exist = getProfileData?.wishlist?.find((e) => e == data?._id);
 
   return (
-    <div className="h-[49vh]  relative border  sm:w-[18vw] my-4  w-[48vw] rounded-md border-[#f7f7f7] flex flex-col items-center group mx-auto">
-      {exist ? (
+    <div className="h-[49vh]  relative border  sm:w-[18vw] my-4  w-[48vw] rounded-md border-[#f7f7f7] flex flex-col  items-center group mx-auto">
+      {/* {exist ? (
         <button
           onClick={() => {
             removeWishlistData(data?._id);
@@ -31,18 +31,18 @@ function ProductCard({ data }) {
         >
           <GoHeart />
         </button>
-      )}
-      <div className="h-[40vh]  w-full  overflow-hidden border-black">
+      )} */}
+      <div className="  w-full flex justify-center overflow-hidden border-black">
         <img src={data?.images[0]?.url} className=" rounded-2xl h-full object-cover object-top" alt="" />
       </div>
       <Link to={`/product/item/${data._id}`} className="p-2 w-full ">
         <div className="text-lg font-semibold">{data?.name}</div>
         <div className="text-sm text-gray-900 flex justify-between">
           <div className="">{data?.category}</div>
-          <div className="">{data?.new_price}</div>
+          <div className="">₹{data?.new_price}</div>
         </div>
       </Link>
-      <Link to={`/product/item/${data._id}`} className=" absolute bottom-0 w-full h-[80%]"></Link>
+      <Link to={`/product/item/${data._id}`} className=" absolute bottom-0 w-full h-full"></Link>
     </div>
   );
 }

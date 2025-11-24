@@ -36,7 +36,7 @@ function ResetPassword() {
       <div className="h-screen w-full flex justify-center items-center">
         <form
           action=""
-          className="w-[33%] flex flex-col p-2 shadow-2xl border-[#858585] gap-2"
+          className="md:w-[33%] w-[93%] flex flex-col p-2 shadow-2xl border-[#858585] gap-2"
           onSubmit={handleSubmit}
         >
           <div className="w-full text-center text-xl p-3 ">

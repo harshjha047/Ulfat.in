@@ -10,7 +10,6 @@ function MainNavigationBar() {
   let { cartData } = useCart();
   const { getProfileData } = useProfile();
   const { setMenu } = useHome();
-  console.log(cartData);
   
 
   return (

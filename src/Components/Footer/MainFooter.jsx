@@ -22,16 +22,16 @@ function MainFooter() {
               <div className="flex gap-4">
                 <Link to={"/"} className="py-3">Home</Link>
                 <Link to={"/product"} className="py-3">Products</Link>
-                <Link to={"/"} className="py-3 flex items-center">Connect <span><LuArrowUpRight/></span></Link>
+                {/* <Link to={"/"} className="py-3 flex items-center">Connect <span><LuArrowUpRight/></span></Link> */}
               </div>
               <div className="flex h-full items-center gap-4">
-                <Link className="text-xl"><FaWhatsapp/></Link>
-                <Link className="text-xl"><FaInstagram/></Link>
+                <Link to={"https://wa.me/919999481555"} target="_blank" className="text-xl"><FaWhatsapp/></Link>
+                <Link to={"https://ig.me/m/ulfat.e.odhani"} target="_blank" className="text-xl"><FaInstagram/></Link>
               </div>
             </div>
-            <div className="flex flex-wrap justify-between w-full text-[#ffffffc2] gap-1 text-sm mb-3 sm:mt-[2px] m-1">
+            <div className="flex flex-wrap justify-between w-full text-[#ffffffc2] gap-1 text-sm mb-6 sm:mt-1 ">
              
-              <div className="cursor-pointer leading-[1]">
+              <div className="cursor-pointer leading-[1] ">
               @ Developed by Harsh jha
               </div>
               <div className="flex items-center gap-1 cursor-pointer leading-[1]">

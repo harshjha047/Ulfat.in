@@ -3,6 +3,7 @@ import authService from "../services/authService";
 import toast from "react-hot-toast";
 import { useProfile } from "./ProfileContext";
 import { useNavigate } from "react-router-dom";
+import  emailjs  from "@emailjs/browser";
 
 const AuthContext = createContext();
 
@@ -13,6 +14,20 @@ export const AuthApi = ({ children }) => {
   const [preRegisterUserData, setPreRegisterUserData] = useState(null);
   const [resetPasswordData, setResetPasswordData] = useState(null);
   const { getProfileData, setGetProfileData } = useProfile();
+  
+    const sendOTP = async (e,i)=>{
+    const templateParams = {
+      email: e,
+      otp_code: i,  // This matches {{otp_code}} in your template
+    };
+    await emailjs.send(
+      'service_h5ksq2r',   // Replace with your Service ID
+      'template_yllomij',  // Replace with your Template ID
+      templateParams,
+      '4xjhIM5gFBL8WVKJ9'    // Replace with your Public Key
+    )
+      toast.success(`Otp has sent to ${e}`);
+  }
 
   let genrateOtp = () => {
     return Math.floor(Math.random() * 8999) + 1000;
@@ -48,12 +63,15 @@ export const AuthApi = ({ children }) => {
       console.log(responce.data);
       let genOtp = genrateOtp();
       setGeneratedOtp(genOtp);
-      toast.success(`Otp has sent to ${inputBox.email}`);
+      
+      sendOTP(inputBox.email,genOtp)
+    
     } catch (err) {
       toast.error("Server error");
       console.log(err);
     }
   };
+
     const resetPassword = async (inputBox) => {
     try {
       const responce=await authService.resetpassword(inputBox);
@@ -63,6 +81,8 @@ export const AuthApi = ({ children }) => {
       console.log(err);
     }
   };
+
+
 
 
   useEffect(() => {}, []);
@@ -84,6 +104,7 @@ export const AuthApi = ({ children }) => {
         preRegisterUserData,
         resetPasswordData,
         setPreRegisterUserData,
+        sendOTP,
       }}
     >
       {children}

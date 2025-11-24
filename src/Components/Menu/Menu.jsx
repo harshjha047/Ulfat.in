@@ -41,11 +41,11 @@ function Menu() {
               name={"Orders"}
               icon={<CiDeliveryTruck />}
             />
-            <MenuButton
+            {/* <MenuButton
               path={"/settings/wishlist"}
               name={"Wishlist"}
               icon={<CiHeart />}
-            />
+            /> */}
             <MenuButton
               path={"/settings/addresses"}
               name={"Addresses"}
@@ -64,11 +64,11 @@ function Menu() {
           </>
         )}
 
-        <MenuButton
+        {/* <MenuButton
           path={"/contectus"}
           name={"Contect Us"}
           icon={<IoMailOutline />}
-        />
+        /> */}
         <div className="flex relative transition-all cursor-pointer items-center gap-2 group ">
           <div
             onClick={() => {

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../Context/AuthContext';
 import toast from 'react-hot-toast';
+import emailjs  from '@emailjs/browser';
 
 function OTPvalidation() {
   let naviagte = useNavigate();
@@ -10,6 +11,7 @@ function OTPvalidation() {
     preRegisterUserData,
     resetPasswordData,
     register,
+    sendOTP,
   } = useAuth();
 
   const initState = { Box: "" };
@@ -19,15 +21,12 @@ function OTPvalidation() {
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
     setInputBox({ ...initState, [name]: value });
   };
-  console.log(genratedOTP);
-  const resendOTP =()=>{
-    console.log(genratedOTP);
-    
+  const resendOTP =async ()=>{
+   sendOTP(inputBox,genratedOTP)
+  
   }
-  console.log(preRegisterUserData);
   
 
   const handleSubmit = async (e) => {
@@ -63,7 +62,7 @@ function OTPvalidation() {
           Enter 4-digit code sent to
           <span>
             {preRegisterUserData?.email}
-            {resetPasswordData?.email}
+            {/* {resetPasswordData?.email} */}
           </span>
         </p>
         <form

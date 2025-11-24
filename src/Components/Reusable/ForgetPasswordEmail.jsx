@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function ForgetPasswordEmail() {
   const [email, setEmail] = useState();
-  const { requestReset } = useAuth();
+  const { requestReset,sendOTP } = useAuth();
   const navigate=useNavigate()
 
 
@@ -31,7 +31,7 @@ function ForgetPasswordEmail() {
       <form
         action=""
         onSubmit={handleSubmit}
-        className="w-[30%] border flex flex-col p-2 gap-2 shadow-2xl"
+        className="md:w-[30%] w-[90%] border flex flex-col p-2 gap-2 shadow-2xl"
       >
         <label htmlFor="email" className="w-full text-xl text-center p-3">
           Enter Valid Email

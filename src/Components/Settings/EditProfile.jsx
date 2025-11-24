@@ -48,7 +48,7 @@ function EditProfile() {
 
   return (
     <div className="fixed h-[100vh] z-50 w-[100vw] top-0 flex justify-center items-center border border-black bg-[#0000001f]">
-      <div className="h-[80vh] w-[30vw]  border bg-white rounded-xl ">
+      <div className="h-[80vh] md:w-[30vw] w-[90vw]  border bg-white rounded-xl ">
         <form
           onSubmit={handleSubmit}
           className="h-full w-full flex flex-col relative justify-center items-center p-4 gap-3"

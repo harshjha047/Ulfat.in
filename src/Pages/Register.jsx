@@ -6,10 +6,11 @@ import { RegisterSchema } from "../Components/Reusable/AuthSchema";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import { useHome } from "../Context/HomeContext";
+import emailjs from '@emailjs/browser';
 
 function Register() {
   let naviagte = useNavigate();
-  const { genrateOtp, setGeneratedOtp, setPreRegisterUserData } = useAuth();
+  const { genrateOtp, setGeneratedOtp, setPreRegisterUserData,sendOTP } = useAuth();
       const {see,setSee}=useHome()
 
 
@@ -19,9 +20,11 @@ function Register() {
     actions.resetForm();
     let genOtp = genrateOtp();
     setGeneratedOtp(genOtp);
-    toast.success(`Otp has sent to ${values.email}`);
     setPreRegisterUserData(values);
-    naviagte("/auth/account/validation");
+    console.log(values.email);
+    sendOTP(values.email,genOtp)
+     naviagte("/auth/account/validation");
+
   };
 
   const {
@@ -42,6 +45,9 @@ function Register() {
     validationSchema: RegisterSchema,
     onSubmit,
   });
+
+
+      
   return (
     <div className="flex flex-col h-screen justify-center items-center">
       <div className=" md:w-[25%] w-[90%] rounded-xl shadow-2xl border border-[#fafafa]">

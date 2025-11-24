@@ -11,7 +11,7 @@ function WishlistItem({wishId}) {
     const [data] = productData?.filter((e)=>e?._id===wishId)
   return (
     <div
-      className="h-[49vh] border relative w-[18vw] rounded-md border-[#f7f7f7] flex flex-col items-center group mx-auto"
+      className=" border relative w-[80%] rounded-md border-[#f7f7f7] flex flex-col items-center group mx-auto"
     >
         <button onClick={()=>{removeWishlistData(data?._id)}}
                     className="absolute top-3 right-3 bg-white text-red-500 p-3 rounded-full shadow-lg 
@@ -20,8 +20,8 @@ function WishlistItem({wishId}) {
                   >
                     <GoHeartFill />
                   </button>
-      <div className="h-[40vh] rounded-2xl w-full border border-black overflow-hidden">
-        <img src={data?.images[0]?.url} className="h-full w-full object-cover object-center" alt="" />
+      <div className=" rounded-2xl w-full border border-black overflow-hidden">
+        <img src={data?.images[0]?.url} className=" w-full object-cover object-center" alt="" />
       </div>
       <Link 
       to={`/product/item/${data?._id}`}
