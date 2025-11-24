@@ -18,13 +18,9 @@ function Login() {
     try {
       actions.resetForm();
       await login(values);
-      toast.success("User Logind Successfully");
-
-      navigate("/");
     } catch (err) {
       console.log(err);
       toast.error("User Login Failed");
-
     }
   };
   const {

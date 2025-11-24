@@ -15,6 +15,7 @@ export const AuthApi = ({ children }) => {
   const [resetPasswordData, setResetPasswordData] = useState(null);
   const { getProfileData, setGetProfileData } = useProfile();
   
+  
     const sendOTP = async (e,i)=>{
     const templateParams = {
       email: e,
@@ -38,7 +39,12 @@ export const AuthApi = ({ children }) => {
       const data = await authService.login(info);
       setAuthData(data);
       setGetProfileData(data);
-    } catch (err) {}
+      toast.success("User Logind Successfully");
+      window.location.replace("/");
+    } catch (err) {
+      console.log(err);
+      toast.error("User Login Failed");
+    }
   };
 
   const register = async (info) => {
@@ -46,7 +52,11 @@ export const AuthApi = ({ children }) => {
       const data = await authService.register(info);
       setAuthData(data);
       setGetProfileData(data);
-    } catch (err) {}
+      window.location.replace("/");
+    } catch (err) {
+      toast.error("User Registration Failed");
+
+    }
   };
 
   const logout = async () => {
