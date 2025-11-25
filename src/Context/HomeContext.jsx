@@ -9,11 +9,12 @@ export const HomeApi = ({ children }) => {
   const [editProfileToast,setEditProfileToast] =useState(false)
   const [loading,setLoading] = useState(false)
   const [see,setSee] = useState(false)
+  const [order,setOrder] = useState()
 
 
 
   return (
-    <HomeContext.Provider value={{see,setSee, menu, setMenu, AddField, setAddField,editProfileToast,setEditProfileToast,loading,setLoading }}>
+    <HomeContext.Provider value={{see,setSee, menu, setMenu, AddField, setAddField,editProfileToast,setEditProfileToast,loading,setLoading,order,setOrder }}>
       {children}
     </HomeContext.Provider>
   );

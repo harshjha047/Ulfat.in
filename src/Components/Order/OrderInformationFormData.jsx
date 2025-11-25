@@ -2,11 +2,19 @@ import React, { useEffect, useState } from "react";
 import { useProfile } from "../../Context/ProfileContext";
 import { useOrder } from "../../Context/OrderContext";
 import { useNavigate } from "react-router-dom";
+import { useHome } from "../../Context/HomeContext";
 
 function OrderInformationFormData() {
   const { getProfileData } = useProfile();
   const { addOrder } = useOrder();
+
+  let {order, setOrder} = useHome()
   const navigate=useNavigate()
+  useEffect(()=>{
+    if(order != "checkout"){
+    navigate('/')
+    }
+  },[])
 
   const init = {
     name: getProfileData?.name,
@@ -49,6 +57,7 @@ function OrderInformationFormData() {
     e.preventDefault();
     await addOrder(initData);
     navigate('/ordersum')
+    setOrder("payment")
   };
 
   return (

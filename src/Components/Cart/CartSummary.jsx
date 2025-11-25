@@ -1,10 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import { CiDeliveryTruck } from "react-icons/ci";
 import { useCart } from '../../Context/CartContext';
+import { useHome } from '../../Context/HomeContext';
 
 function CartSummary() {
       let {cartData, totalPrice } = useCart();
+      let {order, setOrder} = useHome()
   const navigate=useNavigate()
+  const nevi=()=>{
+    setOrder("checkout")
+    navigate("/order")
+  }
   
 
       
@@ -35,7 +41,7 @@ function CartSummary() {
             </div>
           </div>
     <button
-    onClick={()=>{navigate("/order")}}
+    onClick={()=>{nevi()}}
       className="w-full bg-blue-600 text-[#ffffff] py-3 rounded-lg font-semibold hover:bg-blue-700 mb-4"
     >
       Proceed to Checkout

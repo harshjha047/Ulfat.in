@@ -3,10 +3,18 @@ import { PiHandbagLight } from "react-icons/pi";
 import OrderProductCard from "./OrderProductCard";
 import { useOrder } from "../../Context/OrderContext";
 import { useNavigate } from "react-router-dom";
+import { useHome } from "../../Context/HomeContext";
 
 function OrderSummary() {
   const navigate = useNavigate();
   const { orderData, payment, orderSuccess } = useOrder();
+    let {order, setOrder} = useHome()
+
+    useEffect(()=>{
+      if(order != "payment"){
+      navigate('/')
+      }
+    },[])
   const checkoutFunction = async () => {
     try {
       await payment(orderData);
@@ -18,6 +26,7 @@ function OrderSummary() {
       useEffect(() => {
       if (orderSuccess) {
         navigate("/ordersuccess");
+        setOrder("ordersuccess")
       }
     }, [orderSuccess]);
 

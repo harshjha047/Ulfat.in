@@ -24,7 +24,7 @@ function OTPvalidation() {
     setInputBox({ ...initState, [name]: value });
   };
   const resendOTP =async ()=>{
-   sendOTP(inputBox,genratedOTP)
+   sendOTP(preRegisterUserData?.email,genratedOTP)
   
   }
   

@@ -18,6 +18,11 @@ const authService = {
     return data?.user;
   },
 
+    sendotp: async (e) => {
+    const { data } = await api.post("/users/otp", e);
+    return data;
+  },
+
   requestreset: async (credentials) => {
     const responce = await api.post(
         "/users/request-reset",
