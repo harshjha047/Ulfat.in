@@ -25,8 +25,8 @@ function OTPvalidation() {
   };
   const resendOTP =async ()=>{
    sendOTP(preRegisterUserData?.email,genratedOTP)
-  
   }
+
   
 
   const handleSubmit = async (e) => {

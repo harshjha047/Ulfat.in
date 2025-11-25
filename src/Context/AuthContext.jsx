@@ -21,15 +21,20 @@ export const AuthApi = ({ children }) => {
       email: e,
       otp_code: i,  // This matches {{otp_code}} in your template
     };
-    // const data = await authService.sendotp(templateParams)
-    
-    await emailjs.send(
+    try {
+      toast.success(`Otp has sent to ${e}`);
+
+      await emailjs.send(
       'service_h5ksq2r',   // Replace with your Service ID
       'template_yllomij',  // Replace with your Template ID
       templateParams,
       '4xjhIM5gFBL8WVKJ9'    // Replace with your Public Key
     )
-      toast.success(`Otp has sent to ${e}`);
+    } catch (err) {
+      console.log(err);
+      
+    }
+    
   }
 
   let genrateOtp = () => {
