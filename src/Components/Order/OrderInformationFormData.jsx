@@ -67,6 +67,7 @@ function OrderInformationFormData() {
               name="name"
               value={name}
               onChange={handleChange}
+              required
             />
           </div>
           <div className="flex flex-col">
@@ -80,6 +81,7 @@ function OrderInformationFormData() {
               className="mb:w-[50vw] w-[90vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
               value={email}
               onChange={handleChange}
+              required
               placeholder="Email"
             />
           </div>
@@ -90,6 +92,7 @@ function OrderInformationFormData() {
             <input
               type="text"
               name="phone"
+              required
               id="phone"
               className="mb:w-[50vw] w-[90vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
               value={phone}
@@ -102,6 +105,7 @@ function OrderInformationFormData() {
               Street Address
             </label>
             <input
+              required
               type="text"
               id="address"
               className="mb:w-[50vw] w-[90vw] p-3 outline-none border-[#8f8f8f] border rounded-md"
@@ -117,6 +121,7 @@ function OrderInformationFormData() {
                 City
               </label>
               <input
+              required
                 type="text"
                 id="city"
                 className="flex-1 p-3 outline-none border-[#8f8f8f] border rounded-md"
@@ -132,6 +137,7 @@ function OrderInformationFormData() {
               </label>
               <input
                 type="text"
+              required
                 id="state"
                 className="flex-1 p-3 outline-none border-[#8f8f8f] border rounded-md"
                 placeholder="State"
@@ -148,6 +154,7 @@ function OrderInformationFormData() {
                 type="text"
                 id="pincode"
                 className="flex-1 p-3 outline-none border-[#8f8f8f] border rounded-md"
+              required
                 placeholder="PIN Code"
                 name="postalCode"
                 value={postalCode}
