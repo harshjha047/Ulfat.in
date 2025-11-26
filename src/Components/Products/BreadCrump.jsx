@@ -9,7 +9,7 @@ function BreadCrump(props) {
   return (
     <>
     {/* <!-- Breadcrumb --> */}
-     <div className="container mx-auto px-4 py-4">
+     <div className="container mx-auto px-4 py-4 hidden md:block">
     <nav className="text-gray-400">
       <Link to={"/"} className="hover:text-[#2c2c2c]">Home</Link>
       <span className="mx-2">|</span>

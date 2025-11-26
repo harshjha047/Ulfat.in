@@ -36,6 +36,7 @@ useEffect(() => {
       subtotal: product.new_price,
     });
   }
+  setImgIndex(product?.images[0])
 }, [product]);
 
 
@@ -55,6 +56,13 @@ const average = product?.reviews?.length > 0? product?.reviews?.reduce((sum, num
     AddToCart(cartItem)
     navigator("/cart")
    }
+  const [imgIndex,setImgIndex]=useState(product?.images[0])
+
+  const setImage=(id)=>{
+    const imagebyid = product?.images.find((e)=>id==e._id)
+    setImgIndex(imagebyid)
+  }
+
 
 
   return (
@@ -62,13 +70,13 @@ const average = product?.reviews?.length > 0? product?.reviews?.reduce((sum, num
       {/* <!-- Product Images --> */}
       <div className="lg:w-1/2">
         <div className="mb-4">
-          <img id="main-image" src={product?.images[0]?.url} alt={product?.images[0]?.alt} className="w-full rounded-lg"/>
+          <img id="main-image" src={imgIndex?.url} alt={imgIndex?.alt} className="w-full rounded-lg"/>
         </div>
         
         {/* <!-- Thumbnail Images --> */}
         <div className="flex space-x-2">
           {product?.images?.map((e,i)=>
-          <img src={e?.url} alt={e?.alt} key={i}  className="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-blue-500"  />
+          <img src={e?.url} alt={e?.alt} key={i} onClick={()=>{setImage(e._id)}}  className="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-blue-500"  />
           )}
         </div>
       </div>
