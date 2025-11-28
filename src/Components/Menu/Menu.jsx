@@ -12,10 +12,13 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
+import { useCart } from "../../Context/CartContext";
 
 function Menu() {
   const { menu, setMenu } = useHome();
   const { getProfileData } = useProfile();
+    let { cartData } = useCart();
+  
 
   return (
     <div
@@ -32,7 +35,7 @@ function Menu() {
         {getProfileData && (
           <>
             <MenuButton
-              path={"/cart"}
+              path={cartData?.length>0?"/cart":"/nothingincart"}
               name={"My Bag"}
               icon={<PiHandbagSimpleLight />}
             />

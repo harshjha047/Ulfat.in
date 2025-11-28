@@ -4,9 +4,11 @@ import { BiSolidEdit } from "react-icons/bi";
 import EditProfile from "./EditProfile";
 import { useHome } from "../../Context/HomeContext";
 import { Link } from "react-router-dom";
+import { useCart } from "../../Context/CartContext";
 
 function ProfileOverview() {
   const { getProfileData } = useProfile();
+    let { cartData } = useCart();
   const{editProfileToast,setEditProfileToast}=useHome()
   const months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
   const createdDate= getProfileData?.createdAt.split("T")[0]
@@ -26,12 +28,12 @@ function ProfileOverview() {
           <h2 className="text-3xl font-semibold">{getProfileData?.name}</h2>
           <p className="text-zinc-800">{getProfileData?.email}</p>
           <p>{getProfileData?.phone}</p>
-          <p className="text-sm">Member since {months[createdDate.split("-")[1]-1]+" "+createdDate.split("-")[0]}</p>
+          <p className="text-sm">Member since {months[createdDate?.split("-")[1]-1]+" "+createdDate?.split("-")[0]}</p>
         </div>
         <div className="text-xl absolute top-5 right-5 cursor-pointer z-10 invert-0" onClick={()=>{setEditProfileToast(true)}}><BiSolidEdit/></div>
       </div>
       <div className="w-full flex flex-wrap  gap-1 items-center mt-2 p-2">
-        <Link to={"/cart"} className="border p-1 px-4 bg-[#fffffe] flex md:justify-center rounded items-center">My Bag </Link>
+        <Link to={cartData?.length>0?"/cart":"/nothingincart"} className="border p-1 px-4 bg-[#fffffe] flex md:justify-center rounded items-center">My Bag </Link>
         <Link to={"orders"} className="border p-1 px-4 bg-[#fffffe] flex md:justify-center rounded items-center">  Orders History</Link>
         <Link to={"addresses"} className="border p-1 px-4 bg-[#fffffe] flex md:justify-center rounded items-center">Addresses </Link>
         <div onClick={()=>{setEditProfileToast(true)}} className="cursor-pointer border p-1 px-4 bg-[#fffffe] flex md:justify-center rounded items-center">Edit </div>

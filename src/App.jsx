@@ -7,6 +7,7 @@ import Menu from "./Components/Menu/Menu";
 import ReactGA from "react-ga4";
 import { useHome } from "./Context/HomeContext";
 import Loader from "./Components/Reusable/Loader";
+import ScrollToTop from "./Components/Reusable/ScrolltoTop";
 
 function App() {
     const [loading,setLoading] = useState(true)
@@ -19,26 +20,11 @@ function App() {
       title: "App.jsx",
     });
   }, []);
-  
-// useEffect(() => {
-//     const handleLoad = () => {
-//       setLoading(false);
-//     };
-
-//     // 1. Check if the page is ALREADY fully loaded
-//     if (document.readyState === "complete") {
-//       handleLoad();
-//     } else {
-//       // 2. If not, wait for it
-//       window.addEventListener("load", handleLoad);
-//       return () => window.removeEventListener("load", handleLoad);
-//     }
-//   }, []);
   return (
     <>
-    {/* {loading&&<Loader/>} */}
     
       <div className="bg-[#fffdfa]">
+        <ScrollToTop/>
         <MainNavigationBar />
         <Toaster />
         <Menu />
