@@ -60,7 +60,7 @@ function Menu() {
         )}
         {!getProfileData && (
           <>
-            <MenuButton path={"/login"} name={"Login"} icon={<CiLogin />} />
+            <MenuButton path={"/gate"} name={"Login"} icon={<CiLogin />} />
           </>
         )}
 

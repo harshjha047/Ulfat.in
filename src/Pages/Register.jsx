@@ -7,6 +7,7 @@ import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import { useHome } from "../Context/HomeContext";
 import emailjs from '@emailjs/browser';
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 function Register() {
   let naviagte = useNavigate();
@@ -49,15 +50,15 @@ function Register() {
 
       
   return (
-    <div className="flex flex-col h-screen justify-center items-center">
-      <div className=" md:w-[25%] w-[90%] rounded-xl shadow-2xl border border-[#fafafa]">
+    <div className="flex flex-col h-screen justify-end items-center">
+      <div className=" md:w-[25%] w-[90%] min-h-[90%] rounded-xl  relative ">
         <form
           action=""
           onSubmit={handleSubmit}
-          className="w-full h-full flex flex-col justify-center items-center p-3"
+          className="w-full h-full flex flex-col items-center p-1"
         >
-          <div className="w-full flex justify-center items-center text-4xl font-semibold  my-1">
-            Register
+          <div className="w-full flex justify-center items-center text-3xl font-semibold  my-1">
+            Hello! Register to get started
           </div>
           <InputFields
             label={"Full Name"}
@@ -121,14 +122,21 @@ function Register() {
           {/* <div className="flex justify-end w-full text-sm text-cyan-700 my-1"> <Link>Forget Password?</Link></div> */}
           <button
             type="submit"
-            className="w-full py-2 border mt-4 rounded-lg bg-purple-800 text-white text-xl font-semibold flex justify-center items-center"
+            className="w-full py-3 border mt-8 rounded-lg bg-[#111] text-[#ffd7a2] text-xl font-semibold flex justify-center items-center"
           >
             Register
           </button>
-          <div className="flex justify-center w-full text-sm my-1 ">
-            Already have a account ?{" "}
+          <div className="mt-1 w-full  flex md:hidden flex-col justify-center items-center gap-2">
+                      <p className="text-[#11111186]">Contact us on</p>
+                      <div className="flex h-full items-center gap-4 w-full">
+                        <Link to={"https://wa.me/919999481555"} target="_blank" className="text-2xl p-3 flex-1 flex justify-center rounded-md px-4 border "><FaWhatsapp/></Link>
+                        <Link to={"https://ig.me/m/ulfat.e.odhani"} target="_blank" className="text-2xl flex-1 flex justify-center rounded-md p-3 px-4 border"><FaInstagram/></Link>
+                      </div>
+                    </div>
+          <div className="flex justify-center w-full text-sm absolute bottom-3">
+            Already have a account ?
             <Link to={"/login"} className="text-cyan-700">
-              go to login
+              {" "}Login Now
             </Link>
           </div>
         </form>

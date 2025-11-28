@@ -20,23 +20,23 @@ function App() {
     });
   }, []);
   
-useEffect(() => {
-    const handleLoad = () => {
-      setLoading(false);
-    };
+// useEffect(() => {
+//     const handleLoad = () => {
+//       setLoading(false);
+//     };
 
-    // 1. Check if the page is ALREADY fully loaded
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      // 2. If not, wait for it
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
-  }, []);
+//     // 1. Check if the page is ALREADY fully loaded
+//     if (document.readyState === "complete") {
+//       handleLoad();
+//     } else {
+//       // 2. If not, wait for it
+//       window.addEventListener("load", handleLoad);
+//       return () => window.removeEventListener("load", handleLoad);
+//     }
+//   }, []);
   return (
     <>
-    {loading&&<Loader/>}
+    {/* {loading&&<Loader/>} */}
     
       <div className="bg-[#fffdfa]">
         <MainNavigationBar />

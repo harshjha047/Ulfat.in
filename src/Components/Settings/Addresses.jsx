@@ -7,7 +7,7 @@ import AddressCard from './AddressCard'
 function Addresses() {
   const {AddField, setAddField} = useHome()
   const {getProfileData} = useProfile()
-  console.log(getProfileData);
+  // console.log(getProfileData);
   
 
   return (

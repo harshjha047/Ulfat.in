@@ -32,6 +32,7 @@ function EditProfile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setEditProfileToast(false);
       const formData = new FormData();
       formData.append("name", inputBox.name);
       formData.append("phone", inputBox.phone);
@@ -40,7 +41,6 @@ function EditProfile() {
       }
       await EditProfileData(formData);
       toast.success("Peofile Edited");
-      setEditProfileToast(false);
     } catch (err) {
       console.log(err);
     }

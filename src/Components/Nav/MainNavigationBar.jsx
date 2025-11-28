@@ -39,7 +39,7 @@ function MainNavigationBar() {
         </div>
         <div className="flex gap-3 items-center">
           <Link
-            to={getProfileData ? cartData?.length>0?"/cart":"/nothingincart" : "/login"}
+            to={getProfileData ? cartData?.length>0?"/cart":"/nothingincart" : "/gate"}
             className=" border text-xl p-2 border-[#f1f1f1] rounded-full bg-white"
           >
             {getProfileData ? <PiHandbagSimpleLight /> : <LuLogIn />}

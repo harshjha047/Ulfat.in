@@ -25,6 +25,7 @@ import PrivateRouter from "./PrivateRouter.jsx";
 import PublicRouter from "./PublicRouter.jsx";
 import ForgetPasswordEmail from "../Components/Reusable/ForgetPasswordEmail.jsx";
 import ResetPassword from "../Components/Reusable/ResetPassword.jsx";
+import AuthEntrence from "../Pages/AuthEntrence.jsx";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,6 +36,7 @@ export const router = createBrowserRouter(
       <Route path="product/Item/:ProductId" element={<ProductPage />}></Route>
       <Route element={<PublicRouter />}>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/gate" element={<AuthEntrence />}></Route>
         <Route path="/auth/account/validation" element={<OTPvalidation />}></Route>
         <Route path="/auth/account/reset/validation" element={<OTPvalidation />}></Route>
         <Route path="/auth/account/forgetpassword" element={<ForgetPasswordEmail />}></Route>
