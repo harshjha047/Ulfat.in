@@ -60,7 +60,7 @@ function OrderSummary() {
         <span>Total Price</span> <span>₹{orderData?.order?.totalAmount}</span>
       </span>
       <button
-        className="w-full border p-2 shadow rounded-md hover:bg-green-600 bg-green-400 text-lg text-white font-semibold"
+        className="w-full border p-2 shadow rounded-md  text-lg bg-[#111] text-[#ffd7a2] font-semibold"
         onClick={() => {checkoutFunction()}}
       >
         Pay Now

@@ -217,7 +217,7 @@ function OrderInformationFormData() {
         </div> */}
         <button
           type="submit"
-          className="w-full my-4 border p-3 rounded-md bg-[#155DFC] font-medium text-[#fff] text-lg"
+          className="w-full my-4 border p-3 rounded-md font-medium bg-[#111] text-[#ffd7a2] text-lg"
         >
           Place Order
         </button>

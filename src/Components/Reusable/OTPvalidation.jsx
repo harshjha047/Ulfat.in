@@ -46,6 +46,7 @@ function OTPvalidation() {
         }
       } else {
         console.log("f");
+        toast.error("invalid OTP");
       }
     } catch (err) {
       console.log(err);
@@ -80,7 +81,7 @@ function OTPvalidation() {
           />
           <button
             type="submit"
-            className="h-10 flex justify-center items-center border w-full rounded-md bg-[#4675F4] text-white"
+            className="h-10 flex justify-center items-center border w-full rounded-md bg-[#111] text-[#ffd7a2]"
           >
             Varify
           </button>

@@ -42,7 +42,7 @@ function CartSummary() {
           </div>
     <button
     onClick={()=>{nevi()}}
-      className="w-full bg-blue-600 text-[#ffffff] py-3 rounded-lg font-semibold hover:bg-blue-700 mb-4"
+      className="w-full  py-3 rounded-lg font-semibold bg-[#111] text-[#ffd7a2] mb-4"
     >
       Proceed to Checkout
     </button>
