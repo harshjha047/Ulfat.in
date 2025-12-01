@@ -7,7 +7,7 @@ import Menu from "./Components/Menu/Menu";
 import ReactGA from "react-ga4";
 import { useHome } from "./Context/HomeContext";
 import Loader from "./Components/Reusable/Loader";
-import ScrollToTop from "./Components/Reusable/ScrolltoTop";
+import ScrollToTop from `./Components/Reusable/ScrollToTop`;
 
 function App() {
     const [loading,setLoading] = useState(true)
@@ -19,7 +19,7 @@ function App() {
       page: window.location.path,
       title: "App.jsx",
     });
-  }, []);
+  }, [])
   return (
     <>
     
