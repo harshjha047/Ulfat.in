@@ -33,7 +33,7 @@ function MainFooter() {
             <div className="flex flex-wrap justify-between w-full text-[#ffffffc2] gap-1 text-sm mb-6 sm:mt-1 py-1 ">
              
               <div className="cursor-pointer leading-[1] ">
-              @ Developed by Aditya Kumar Tiwari
+              @ Developed by Harsh jha
               </div>
               {/* <div className="flex items-center gap-1 cursor-pointer leading-[1]">
               <span className=""><FiLock/></span > Secured by Razorpay
