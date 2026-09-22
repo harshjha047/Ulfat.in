@@ -1,13 +1,13 @@
 import ProductCardHome from "../Products/ProductCardHome";
-import banner from "../../../media/newbanner.jpg";
+import banner from "../../../media/newbanner.avif";
 import { useProduct } from "../../Context/ProductContext";
 
 function Shop() {
   const { productData } = useProduct();
-  const a = productData?.find((e) => e._id == "6902fd9f0edc3f4030993dff");
-  const b = productData?.find((e) => e._id == "6903015b0edc3f4030993e4b");
-  const c = productData?.find((e) => e._id == "6903023b0edc3f4030993e8d");
-  const d = productData?.find((e) => e._id == "6903000b0edc3f4030993e32");
+  const a = productData?.find((e) => e._id == "1");
+  const b = productData?.find((e) => e._id == "2");
+  const c = productData?.find((e) => e._id == "3");
+  const d = productData?.find((e) => e._id == "4");
 
   return (
     <div className=" border-black w-full ">

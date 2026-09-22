@@ -1,7 +1,4 @@
-import React from 'react'
-import IMG from '../../media/ulfat.e.odhani.png'
 import { Link } from 'react-router-dom'
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 function AuthEntrence() {
   return (

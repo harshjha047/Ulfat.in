@@ -31,11 +31,11 @@ function Menu() {
     >
       <div className="  flex flex-wrap items-start gap-2   customScrollerMini h-full flex-col justify-center  ">
         <MenuButton path={"/"} name={"Home"} icon={<RiHome5Line />} />
-        <MenuButton path={"/product"} name={"Products"} icon={<VscTag />} />
+        <MenuButton path={"/"} name={"Products"} icon={<VscTag />} />
         {getProfileData && (
           <>
             <MenuButton
-              path={cartData?.length>0?"/cart":"/nothingincart"}
+              path={cartData?.length>0?"/":"/nothingincart"}
               name={"My Bag"}
               icon={<PiHandbagSimpleLight />}
             />
@@ -44,11 +44,11 @@ function Menu() {
               name={"Orders"}
               icon={<CiDeliveryTruck />}
             />
-            {/* <MenuButton
+            <MenuButton
               path={"/settings/wishlist"}
               name={"Wishlist"}
               icon={<CiHeart />}
-            /> */}
+            />
             <MenuButton
               path={"/settings/addresses"}
               name={"Addresses"}
@@ -63,15 +63,15 @@ function Menu() {
         )}
         {!getProfileData && (
           <>
-            <MenuButton path={"/gate"} name={"Login"} icon={<CiLogin />} />
+            <MenuButton path={"/"} name={"Login"} icon={<CiLogin />} />
           </>
         )}
 
-        {/* <MenuButton
-          path={"/contectus"}
+        <MenuButton
+          path={"/"}
           name={"Contect Us"}
           icon={<IoMailOutline />}
-        /> */}
+        />
         <div className="flex relative transition-all cursor-pointer items-center gap-2 group ">
           <div
             onClick={() => {

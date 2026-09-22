@@ -1,4 +1,4 @@
-import banner from "../../../media/banner.jpg"
+import banner from "../../../media/banner.avif"
 import { LuArrowUpRight } from "react-icons/lu";
 import { Link } from "react-router-dom";
 

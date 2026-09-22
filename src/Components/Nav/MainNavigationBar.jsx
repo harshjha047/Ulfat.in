@@ -31,7 +31,7 @@ function MainNavigationBar() {
             Home
           </Link>
           <Link
-            to={"/product"}
+            to={"/"}
             className="text-sm font-medium text-gray-800 bg-white py-2 px-3 rounded-full"
           >
             Products

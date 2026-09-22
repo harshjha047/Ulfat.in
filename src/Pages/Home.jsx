@@ -1,8 +1,6 @@
-import React from 'react'
 import Hero from '../Components/Home/Hero'
 import Shop from '../Components/Home/Shop'
 import MayAlsoLike from '../Components/Home/MayAlsoLike'
-import Loader from '../Components/Reusable/Loader'
 
 function Home() {
   return (<>

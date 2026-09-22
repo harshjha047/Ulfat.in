@@ -7,10 +7,10 @@ import Menu from "./Components/Menu/Menu";
 import ReactGA from "react-ga4";
 import { useHome } from "./Context/HomeContext";
 import Loader from "./Components/Reusable/Loader";
-import ScrollToTop from `./Components/Reusable/ScrollToTop`;
+// import ScrollToTop from `./Components/Reusable/ScrollToTop`;
 
 function App() {
-    const [loading,setLoading] = useState(true)
+    // const [loading,setLoading] = useState(true)
   
   useEffect(() => {
     ReactGA.initialize("G-WGPVJTCW02");
@@ -24,7 +24,7 @@ function App() {
     <>
     
       <div className="bg-[#fffdfa]">
-        <ScrollToTop/>
+        {/* <ScrollToTop/> */}
         <MainNavigationBar />
         <Toaster />
         <Menu />
